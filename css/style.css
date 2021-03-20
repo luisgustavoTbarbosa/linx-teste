@@ -7,14 +7,17 @@
 html {
   font-family: 'Open Sans', sans-serif;
   font-size: 86.75%;
+
+  animation: show .5s forwards;
 }
 
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 .container {
   height: 100%;
+  position: relative;
 }
 
 header {
@@ -53,13 +56,13 @@ main section .search {
   border-radius: 8px;
 }
 
-main section .search form div {
+main section .search .div-inputSearch form  {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-main section .search form div input {
+main section .search .div-inputSearch form input {
   height: 34px;
   width: 100%;
   border: none;
@@ -67,9 +70,9 @@ main section .search form div input {
   padding: 0 1rem;
 }
 
-main section .search form div button {
+main section .search .div-inputSearch form button {
   background: #6E4B87;
-  height: 35px;
+  height: 34px;
   width: 90px;
   border: none;
   border-radius: 8px;
@@ -78,6 +81,12 @@ main section .search form div button {
   font-weight: 700;
   font-size: 14px;
   margin-left: -20px;
+  cursor: pointer;
+  transition: background-color .5s;
+}
+
+main section .search .div-inputSearch form button:hover {
+  background: #7F579B;
 }
 
 main section .search .filter {
@@ -125,11 +134,17 @@ main section .assignment:first-child::before {
 }
 
 main section .assignment {
+  height: 100%;
   display: flex;
   border: 1px solid #000;
   border-radius: 14px;
   padding: 1rem .5rem;
   margin: 2rem 0 0;
+  transition: box-shadow .2s;
+}
+
+main section .assignment:hover {
+  box-shadow: 0px 0px 27px -8px rgba(0,0,0,0.75);
 }
 
 main section .assignment .card-head {
@@ -175,6 +190,13 @@ main section .assignment .card-body button {
   font-size: 16px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
+  transition: background-color .5s;
+  cursor: pointer;
+}
+
+main section .assignment .card-body button:hover {
+  background: #422755;
+  color: #fff;
 }
 
 main section .assignment .card-body p:last-child {
@@ -209,8 +231,230 @@ footer .last-text {
   background: #422755;
   color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 5rem;
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  main {
+    margin: 0 auto;
+    width: 85%;
+    padding: .5rem 0;
+  }
+
+  main section .search {
+    padding: 2rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  main section .search .filter {
+    margin-top: 0;
+  }
+
+  main section .search .filter label {
+    font-size: 13px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  main section .grid-assignment  {
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  main section .grid-assignment .assignment {
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 14px;
+    padding: 1rem .5rem;
+    margin: 0;
+
+    display: block;
+  }
+
+  main section .assignment .card-head {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    margin-right: 1rem;
+  }
+  
+  main section .assignment .card-head img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  main section .assignment .card-body h3:first-child {
+    font-size: 14px;
+    font-weight: 700;
+    color: #414141;
+  }
+
+  main section .assignment .card-body h3 {
+    margin-top: 1rem;
+  }
+
+  main section .assignment .card-body button {
+    margin-top: .5rem;
+  }
+
+  main section .assignment .card-body p {
+    font-size: 13px;
+    font-weight: normal;
+    margin: .5rem 0 1rem;
+  }
+
+  main section .assignment .card-body p:last-child {
+    font-size: 11px;
+    margin: .5rem 0 0;
+  }
+
+  footer .linx {
+    margin: 0 auto;
+    width: 80%;
+    padding: 3rem 0 5rem 3rem;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  footer .linx div {
+    margin-left: 1rem;
+  }
+
+  footer .linx p + p {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    margin: 0 auto;
+    width: 80%;
+    padding: .5rem 0;
+  }
+
+  main section .grid-assignment  {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  footer .linx {
+    margin: 0 auto;
+    width: 80%;
+    padding: 5rem 0 5rem 3rem;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  footer .linx div {
+    margin-left: 2rem;
+  }
+
+  footer .linx p + p {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1399px) {
+  main {
+    margin: 0 auto;
+    width: 65%;
+    padding: .5rem 0;
+  }
+
+  main section .grid-assignment  {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  footer .linx {
+    margin: 0 auto;
+    width: 65%;
+    padding: 5rem 0 7rem 3rem;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  footer .linx div {
+    margin-left: 1rem;
+  }
+
+  footer .linx p + p {
+    margin-top: 1.5rem;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0)
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #422755;
+}
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 2;
+}
+
+main section .assignment.complete img {
+  width: 90%;
+}
+
+main section .assignment.complete button {
+  display: disable;
+  background: #4CD62B;
+  border: none;
+  color: #fff;
+  cursor: default;
+}
+
+main section .assignment.complete button:hover {
+  background: #4CD62B;
+  color: #fff;
 }
