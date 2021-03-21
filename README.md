@@ -1,31 +1,3 @@
-<style type="text/css">
-  div {
-    background: #222;
-    color: #c1c1c1;
-    padding: 20px 100px;
-    text-align: center;
-  }
-
-  h1 {
-    margin-top: 20px;
-  }
-
-  h2 {
-    margin: 10px 0 0 5px;
-      text-align: left;
-  }
-
-  img {
-    width: 70%;
-    margin-bottom: 30px;
-  }
-
-  ul {
-    list-style: none;
-    text-align: left;
-  }
-</style>
-
 <div>
   <h1>Linx Projeto Agenda</h1>
   <p>Nesse projeto você conseguirá adicionar suas tarefas e ter um controle melhor de sua semana</p>
